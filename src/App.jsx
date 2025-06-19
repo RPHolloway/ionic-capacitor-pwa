@@ -17,12 +17,57 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#183c69",
+      contrastText: "#ffffff",
     },
     secondary: {
       main: "#64a2f4",
+      contrastText: "#ffffff",
     },
     background: {
       default: "#faf9fa",
+      paper: "#ffffff",
+    },
+    text: {
+      primary: "#183c69",
+      secondary: "rgba(24, 60, 105, 0.7)",
+    },
+  },
+  components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#ffffff",
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        contained: {
+          backgroundColor: "#64a2f4",
+          color: "#ffffff",
+          "&:hover": {
+            backgroundColor: "#183c69",
+          },
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "& .MuiOutlinedInput-root": {
+            backgroundColor: "#faf9fa",
+            "& fieldset": {
+              borderColor: "rgba(24, 60, 105, 0.3)",
+            },
+            "&:hover fieldset": {
+              borderColor: "#64a2f4",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#183c69",
+            },
+          },
+        },
+      },
     },
   },
 });
