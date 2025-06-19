@@ -1,0 +1,28 @@
+:root {
+  /* Colors */
+  --md-sys-color-primary: #183c69;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #d3e3ff;
+  --md-sys-color-secondary: #64a2f4;
+  --md-sys-color-surface: #faf9fa;
+  --md-sys-color-surface-container: #ffffff;
+
+  /* Elevation */
+  --md-sys-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.14);
+  --md-sys-elevation-2: 0 3px 6px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.12);
+  --md-sys-elevation-3: 0 10px 20px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --md-sys-typescale-display-large: 500 3.5rem/4rem "Roboto", sans-serif;
+  --md-sys-typescale-headline-medium: 500 1.75rem/2.25rem "Roboto", sans-serif;
+  --md-sys-typescale-body-large: 400 1rem/1.5rem "Roboto", sans-serif;
+  --md-sys-typescale-label-large: 500 0.875rem/1.25rem "Roboto", sans-serif;
+
+  /* Shape */
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+}
