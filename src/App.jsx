@@ -1,8 +1,17 @@
 import { ThemeProvider, createTheme } from "@mui/material";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
+import { IonReactRouter } from "@ionic/react-router";
+import { Route, Redirect } from "react-router-dom";
 import { AuthProvider } from "./contexts/Auth";
 import Profile from "./pages/Profile/Profile";
-//import Login from "./pages/Login/Login";
+
+/* Core CSS required for Ionic components to work properly */
+import "@ionic/react/css/core.css";
+import "@ionic/react/css/normalize.css";
+import "@ionic/react/css/structure.css";
+import "@ionic/react/css/typography.css";
+
+setupIonicReact();
 
 const theme = createTheme({
   palette: {
@@ -20,15 +29,19 @@ const theme = createTheme({
 
 export default function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <AuthProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Navigate to="/profile" replace />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-        </BrowserRouter>
-      </AuthProvider>
-    </ThemeProvider>
+    <IonApp>
+      <ThemeProvider theme={theme}>
+        <AuthProvider>
+          <IonReactRouter>
+            <IonRouterOutlet>
+              <Route exact path="/">
+                <Redirect to="/profile" />
+              </Route>
+              <Route path="/profile" component={Profile} exact={true} />
+            </IonRouterOutlet>
+          </IonReactRouter>
+        </AuthProvider>
+      </ThemeProvider>
+    </IonApp>
   );
 }

@@ -10,6 +10,14 @@ export default defineConfig({
     react(),
     legacy()
   ],
+  optimizeDeps: {
+    include: [
+      '@ionic/react',
+      '@ionic/react-router',
+      '@mui/material',
+      '@mui/icons-material'
+    ]
+  },
   test: {
     globals: true,
     environment: 'jsdom',
